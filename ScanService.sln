@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mallenom.Network.Core", "ClassLibrary2\Mallenom.Network.Core.csproj", "{A9CB4F77-509F-42B1-8379-1977A80151FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mallenom.ScanNetwork.Gui", "WindowsFormsApplication1\Mallenom.ScanNetwork.Gui.csproj", "{755F4343-3583-4D35-864D-AE7C649495E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9CB4F77-509F-42B1-8379-1977A80151FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9CB4F77-509F-42B1-8379-1977A80151FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9CB4F77-509F-42B1-8379-1977A80151FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9CB4F77-509F-42B1-8379-1977A80151FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{755F4343-3583-4D35-864D-AE7C649495E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{755F4343-3583-4D35-864D-AE7C649495E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{755F4343-3583-4D35-864D-AE7C649495E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{755F4343-3583-4D35-864D-AE7C649495E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

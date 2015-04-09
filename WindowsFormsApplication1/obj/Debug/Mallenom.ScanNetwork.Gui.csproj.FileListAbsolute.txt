@@ -1,0 +1,61 @@
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe.config
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.pdb
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csprojResolveAssemblyReference.cache
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.MainForm.resources
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.Properties.Resources.resources
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csproj.GenerateResource.Cache
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.exe
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.pdb
+C:\Users\User\Desktop\учеба\ScanService\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe.config
+C:\Users\User\Desktop\учеба\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.exe
+C:\Users\User\Desktop\учеба\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.pdb
+C:\Users\User\Desktop\учеба\ScanService\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe
+C:\Users\User\Desktop\учеба\ScanService\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.pdb
+C:\Users\User\Desktop\учеба\ScanService\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\User\Desktop\учеба\ScanService\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\User\Desktop\учеба\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\учеба\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.MainForm.resources
+C:\Users\User\Desktop\учеба\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.Properties.Resources.resources
+C:\Users\User\Desktop\учеба\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csproj.GenerateResource.Cache
+C:\Users\Артём\Desktop\ScanService\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe.config
+C:\Users\Артём\Desktop\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.exe
+C:\Users\Артём\Desktop\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.pdb
+C:\Users\Артём\Desktop\ScanService\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe
+C:\Users\Артём\Desktop\ScanService\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.pdb
+C:\Users\Артём\Desktop\ScanService\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\Артём\Desktop\ScanService\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\Артём\Desktop\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csprojResolveAssemblyReference.cache
+C:\Users\Артём\Desktop\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.MainForm.resources
+C:\Users\Артём\Desktop\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.Properties.Resources.resources
+C:\Users\Артём\Desktop\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\project\project\ScanService\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe.config
+C:\Users\User\Desktop\project\project\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.exe
+C:\Users\User\Desktop\project\project\ScanService\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.pdb
+K:\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe.config
+K:\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.exe
+K:\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.pdb
+K:\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe
+K:\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.pdb
+K:\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.dll
+K:\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+K:\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csprojResolveAssemblyReference.cache
+K:\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.MainForm.resources
+K:\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.Properties.Resources.resources
+K:\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\Новая папка (2)\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe.config
+C:\Users\User\Desktop\Новая папка (2)\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.exe
+C:\Users\User\Desktop\Новая папка (2)\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.pdb
+C:\Users\User\Desktop\Новая папка (2)\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Новая папка (2)\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.MainForm.resources
+C:\Users\User\Desktop\Новая папка (2)\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.Properties.Resources.resources
+C:\Users\User\Desktop\Новая папка (2)\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\Новая папка (2)\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe
+C:\Users\User\Desktop\Новая папка (2)\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.pdb
+C:\Users\User\Desktop\Новая папка (2)\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\User\Desktop\Новая папка (2)\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\User\Desktop\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe.config
+C:\Users\User\Desktop\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.exe
+C:\Users\User\Desktop\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.pdb

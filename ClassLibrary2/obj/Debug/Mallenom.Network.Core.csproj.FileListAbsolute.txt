@@ -1,0 +1,24 @@
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\Артём\Documents\Visual Studio 2013\Projects\ClassLibrary2\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\User\Desktop\учеба\ScanService\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\User\Desktop\учеба\ScanService\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\User\Desktop\учеба\ScanService\ScanService\ClassLibrary2\obj\Debug\Mallenom.Network.Core.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\учеба\ScanService\ScanService\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\User\Desktop\учеба\ScanService\ScanService\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\Артём\Desktop\ScanService\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\Артём\Desktop\ScanService\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\Артём\Desktop\ScanService\ScanService\ClassLibrary2\obj\Debug\Mallenom.Network.Core.csprojResolveAssemblyReference.cache
+C:\Users\Артём\Desktop\ScanService\ScanService\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\Артём\Desktop\ScanService\ScanService\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.pdb
+K:\ScanService\ClassLibrary2\obj\Debug\Mallenom.Network.Core.csprojResolveAssemblyReference.cache
+K:\ScanService\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.dll
+K:\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.dll
+K:\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+K:\ScanService\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\User\Desktop\Новая папка (2)\ScanService\ClassLibrary2\obj\Debug\Mallenom.Network.Core.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Новая папка (2)\ScanService\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\User\Desktop\Новая папка (2)\ScanService\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\User\Desktop\Новая папка (2)\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\User\Desktop\Новая папка (2)\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.pdb
