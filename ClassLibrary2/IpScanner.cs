@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Mallenom.ScanNetwork.Core
 {
@@ -52,20 +53,16 @@ namespace Mallenom.ScanNetwork.Core
 		/// <returns>Список доступных для ICMP связи адресов.</returns>
 		public IReadOnlyList<string> Skannig()
 		{
-			var list = new List<string>(100);
 
-			for(var i = 192; i <= 192; i++)
-				for(var j = 168; j <= 168; j++)
-					for(var k = 10; k <= 10; k++)
-						for(var s = 0; s <= 255; s++)
-						{
-							var address = IPAddress
-								.Parse(
-									i.ToString(CultureInfo.InvariantCulture) + '.' +
-									j.ToString(CultureInfo.InvariantCulture) + '.' +
-									k.ToString(CultureInfo.InvariantCulture) + '.' +
-									s.ToString(CultureInfo.InvariantCulture));
-
+            var firstadAddress = IPAddress.Parse("192.168.100.0");
+            var lasAddress = IPAddress.Parse("192.168.100.10");
+            var range = IPAddressesRange(firstadAddress, lasAddress);
+		    
+            
+            var list = new List<string>(100);
+            foreach (var address in range)
+            {
+         
 							var reaply = _ping.Send(
 								address,
 								Timeout,
@@ -79,14 +76,32 @@ namespace Mallenom.ScanNetwork.Core
 									if(reaply.Address != null)
 									{
 										list.Add(reaply.Address.ToString());
-									}
+                                    }
 								}
 							}
 						}
-
+            
 			return list;
+
 		}
 
+        private static List<IPAddress> IPAddressesRange(IPAddress firstadAddress, IPAddress lasAddress)
+        {
+            var firstIPAddressAsBytesArray = firstadAddress.GetAddressBytes();
+            var lastIPAddressAsBytesArray = lasAddress.GetAddressBytes();
+            Array.Reverse(firstIPAddressAsBytesArray);
+            Array.Reverse(lastIPAddressAsBytesArray);
+            var firstIPAddressAsInt = BitConverter.ToInt32(firstIPAddressAsBytesArray, 0);
+            var lastIPAddressAsInt = BitConverter.ToInt32(lastIPAddressAsBytesArray, 0);
+            var ipAddressesInTheRange = new List<IPAddress>();
+            for (var i = firstIPAddressAsInt; i <= lastIPAddressAsInt; i++)
+            {
+                var bytes = BitConverter.GetBytes(i);
+                var newIp = new IPAddress(new[] {bytes[3], bytes[2], bytes[1], bytes[0]});
+                ipAddressesInTheRange.Add(newIp);
+            }
+            return ipAddressesInTheRange;
+        }
 		#endregion
 	}
 }

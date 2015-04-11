@@ -22,3 +22,8 @@ C:\Users\User\Desktop\Новая папка (2)\ScanService\ClassLibrary2\obj\De
 C:\Users\User\Desktop\Новая папка (2)\ScanService\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.pdb
 C:\Users\User\Desktop\Новая папка (2)\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.dll
 C:\Users\User\Desktop\Новая папка (2)\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\User\Desktop\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\User\Desktop\ScanService\ClassLibrary2\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+C:\Users\User\Desktop\ScanService\ClassLibrary2\obj\Debug\Mallenom.Network.Core.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\ScanService\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.dll
+C:\Users\User\Desktop\ScanService\ClassLibrary2\obj\Debug\Mallenom.ScanNetwork.Core.pdb
