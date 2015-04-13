@@ -42,7 +42,8 @@ namespace Mallenom.ScanNetwork.Core
 	   
 		public async Task<IReadOnlyList<IpAddressData>> ScanNetworkAsync()
 		{
-			var serverList = _ipScanner.Skannig();
+			var serverList = _ipScanner.Skannig(_configration.Minimum, _configration.Maximum);
+
 			List<IpAddressData> list = null;
 
 			foreach (var ipAddress in serverList)

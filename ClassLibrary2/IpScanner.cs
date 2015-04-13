@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -52,12 +51,9 @@ namespace Mallenom.ScanNetwork.Core
 
 		/// <summary>Сканировать сеть.</summary>
 		/// <returns>Список доступных для ICMP связи адресов.</returns>
-		public IReadOnlyList<IPAddress> Skannig()
+		public IReadOnlyList<IPAddress> Skannig(IPAddress minimum, IPAddress maximum)
 		{
-
-			var firstadAddress = IPAddress.Parse("192.168.10.0");
-			var lasAddress = IPAddress.Parse("192.168.10.100");
-			var range = IpAddressesRange(firstadAddress, lasAddress);
+			var range = IpAddressesRange(minimum, maximum);
 
 			var stopwatch = new Stopwatch();
 			stopwatch.Start();
@@ -94,10 +90,10 @@ namespace Mallenom.ScanNetwork.Core
 
 		}
 
-		private static IEnumerable<IPAddress> IpAddressesRange(IPAddress firstadAddress, IPAddress lasAddress)
+		private static IEnumerable<IPAddress> IpAddressesRange(IPAddress minimum, IPAddress maximum)
 		{
-			var firstIpAddressAsBytesArray = firstadAddress.GetAddressBytes();
-			var lastIpAddressAsBytesArray = lasAddress.GetAddressBytes();
+			var firstIpAddressAsBytesArray = minimum.GetAddressBytes();
+			var lastIpAddressAsBytesArray = maximum.GetAddressBytes();
 
 			Array.Reverse(firstIpAddressAsBytesArray);
 			Array.Reverse(lastIpAddressAsBytesArray);

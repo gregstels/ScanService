@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Net;
 using System.Windows.Forms;
 using Mallenom.ScanNetwork.Core;
 
@@ -23,7 +24,8 @@ namespace Mallenom.ScanNetwork.Gui
 			_progress = new Progress<IpAddressData>();
 			_progress.ProgressChanged += AddressAdded;
 
-
+			_txtMimimum.Text = _scanServiceConfigration.Minimum.ToString();
+			_txtMaximum.Text = _scanServiceConfigration.Maximum.ToString();
 
 			dataGridView1.DataSource = _bindingList;
 		}
@@ -50,7 +52,37 @@ namespace Mallenom.ScanNetwork.Gui
 		private async void button1_Click(object sender, EventArgs e)
 		{
 			_bindingList.Clear();
-			
+
+			IPAddress minimum;
+			IPAddress maximum;
+
+			if(!IPAddress.TryParse(_txtMimimum.Text, out minimum))
+			{
+				MessageBox.Show(
+					this,
+					@"Неправильно указан минимальный адрес.",
+					@"Scan Service",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
+
+				return;
+			}
+
+			if(!IPAddress.TryParse(_txtMaximum.Text, out maximum))
+			{
+				MessageBox.Show(
+					this,
+					@"Неправильно указан максимальный адрес.",
+					@"Scan Service",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error);
+
+				return;
+			}
+
+			_scanServiceConfigration.Minimum = minimum;
+			_scanServiceConfigration.Maximum = maximum;
+
 			using(var scanner = new ScanService(_scanServiceConfigration))
 			{
 				var list = await scanner.ScanNetworkAsync();
