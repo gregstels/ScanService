@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
-using System.Windows.Forms;
 
 namespace Mallenom.ScanNetwork.Core
 {
@@ -13,7 +14,7 @@ namespace Mallenom.ScanNetwork.Core
 	{
 		#region consts
 		
-		private const int Timeout = 250;
+		private const int Timeout = 500;
 		private const IPStatus Success = IPStatus.Success;
 		private const string SendMessage = "ping";
 
@@ -51,57 +52,77 @@ namespace Mallenom.ScanNetwork.Core
 
 		/// <summary>Сканировать сеть.</summary>
 		/// <returns>Список доступных для ICMP связи адресов.</returns>
-		public IReadOnlyList<string> Skannig()
+		public IReadOnlyList<IPAddress> Skannig()
 		{
 
-            var firstadAddress = IPAddress.Parse("192.168.100.0");
-            var lasAddress = IPAddress.Parse("192.168.100.10");
-            var range = IPAddressesRange(firstadAddress, lasAddress);
-		    
-            
-            var list = new List<string>(100);
-            foreach (var address in range)
-            {
-         
-							var reaply = _ping.Send(
-								address,
-								Timeout,
-								Buffer,
-								PingOptions);
+			var firstadAddress = IPAddress.Parse("192.168.10.0");
+			var lasAddress = IPAddress.Parse("192.168.10.100");
+			var range = IpAddressesRange(firstadAddress, lasAddress);
 
-							if(reaply != null)
-							{
-								if(reaply.Status == Success)
-								{
-									if(reaply.Address != null)
-									{
-										list.Add(reaply.Address.ToString());
-                                    }
-								}
-							}
+			var stopwatch = new Stopwatch();
+			stopwatch.Start();
+
+			var list = new List<IPAddress>(100);
+			foreach(var address in range)
+			{
+				var reaply = _ping.Send(
+					address,
+					Timeout,
+					Buffer,
+					PingOptions);
+
+				if(reaply != null)
+				{
+					if(reaply.Status == Success)
+					{
+						if(reaply.Address != null)
+						{
+							list.Add(reaply.Address);
 						}
-            
+					}
+				}
+			}
+
+			stopwatch.Stop();
+			var message = string.Format(
+					CultureInfo.InvariantCulture,
+					"Время обработки списка адресов: {0}.",
+					stopwatch.Elapsed);
+			Debug.WriteLine(message);
+
 			return list;
 
 		}
 
-        private static List<IPAddress> IPAddressesRange(IPAddress firstadAddress, IPAddress lasAddress)
-        {
-            var firstIPAddressAsBytesArray = firstadAddress.GetAddressBytes();
-            var lastIPAddressAsBytesArray = lasAddress.GetAddressBytes();
-            Array.Reverse(firstIPAddressAsBytesArray);
-            Array.Reverse(lastIPAddressAsBytesArray);
-            var firstIPAddressAsInt = BitConverter.ToInt32(firstIPAddressAsBytesArray, 0);
-            var lastIPAddressAsInt = BitConverter.ToInt32(lastIPAddressAsBytesArray, 0);
-            var ipAddressesInTheRange = new List<IPAddress>();
-            for (var i = firstIPAddressAsInt; i <= lastIPAddressAsInt; i++)
-            {
-                var bytes = BitConverter.GetBytes(i);
-                var newIp = new IPAddress(new[] {bytes[3], bytes[2], bytes[1], bytes[0]});
-                ipAddressesInTheRange.Add(newIp);
-            }
-            return ipAddressesInTheRange;
-        }
+		private static IEnumerable<IPAddress> IpAddressesRange(IPAddress firstadAddress, IPAddress lasAddress)
+		{
+			var firstIpAddressAsBytesArray = firstadAddress.GetAddressBytes();
+			var lastIpAddressAsBytesArray = lasAddress.GetAddressBytes();
+
+			Array.Reverse(firstIpAddressAsBytesArray);
+			Array.Reverse(lastIpAddressAsBytesArray);
+
+			var firstIpAddressAsInt = BitConverter.ToInt32(firstIpAddressAsBytesArray, 0);
+			var lastIpAddressAsInt = BitConverter.ToInt32(lastIpAddressAsBytesArray, 0);
+
+			var ipAddressesInTheRange = new List<IPAddress>();
+			var stopwatch = new Stopwatch();
+			stopwatch.Start();
+			for (var i = firstIpAddressAsInt; i <= lastIpAddressAsInt; i++)
+			{
+				var bytes = BitConverter.GetBytes(i);
+				var address = new IPAddress(new[] {bytes[3], bytes[2], bytes[1], bytes[0]});
+				ipAddressesInTheRange.Add(address);				
+			}
+			stopwatch.Stop();
+			var message = string.Format(
+					CultureInfo.InvariantCulture,
+					"Время составления списка адресов: {0}.",
+					stopwatch.Elapsed);
+			Debug.WriteLine(message);
+
+			return ipAddressesInTheRange;
+		}
 		#endregion
 	}
 }

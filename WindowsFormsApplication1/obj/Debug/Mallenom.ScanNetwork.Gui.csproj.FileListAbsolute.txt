@@ -67,3 +67,14 @@ C:\Users\User\Desktop\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.Sc
 C:\Users\User\Desktop\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.pdb
 C:\Users\User\Desktop\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.dll
 C:\Users\User\Desktop\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe.config
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.exe
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.pdb
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.exe
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Gui.pdb
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.dll
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\bin\Debug\Mallenom.ScanNetwork.Core.pdb
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csprojResolveAssemblyReference.cache
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.MainForm.resources
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.Properties.Resources.resources
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Debug\Mallenom.ScanNetwork.Gui.csproj.GenerateResource.Cache

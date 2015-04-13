@@ -9,10 +9,8 @@ namespace Mallenom.ScanNetwork.Gui
 	public sealed partial class MainForm : Form
 	{
 		private readonly BindingList<IpAddressData> _bindingList;
-		private readonly IScanService _scanService;
 		private readonly Progress<IpAddressData> _progress;
 		private readonly ScanServiceConfigration _scanServiceConfigration;
-        private readonly IpScanner _ipScanner;
 		public MainForm()
 		{
 			InitializeComponent();
@@ -21,9 +19,7 @@ namespace Mallenom.ScanNetwork.Gui
 			BackColor = SystemColors.Window;
 
 			_scanServiceConfigration = new ScanServiceConfigration();
-            _ipScanner = new IpScanner();
 			_bindingList = new BindingList<IpAddressData>();
-            _scanService = new ScanService(_scanServiceConfigration, _ipScanner);
 			_progress = new Progress<IpAddressData>();
 			_progress.ProgressChanged += AddressAdded;
 
@@ -53,18 +49,18 @@ namespace Mallenom.ScanNetwork.Gui
 
 		private async void button1_Click(object sender, EventArgs e)
 		{
-            _bindingList.Clear();
-            
-            
-			//await _scanService.MethodAsync(_progress);
-            
-			var list = await _scanService.ScanNetworkAsync();
-
-			if(list == null) return;
+			_bindingList.Clear();
 			
-			foreach(var ipAddressData in list)
+			using(var scanner = new ScanService(_scanServiceConfigration))
 			{
-				_bindingList.Add(ipAddressData);
+				var list = await scanner.ScanNetworkAsync();
+
+				if(list == null) return;
+
+				foreach(var ipAddressData in list)
+				{
+					_bindingList.Add(ipAddressData);
+				}
 			}
 		}
 	}

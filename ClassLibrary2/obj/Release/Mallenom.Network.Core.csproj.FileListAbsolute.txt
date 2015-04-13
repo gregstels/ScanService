@@ -1,0 +1,4 @@
+D:\Students\Dima Karasev\ScanService\ClassLibrary2\bin\Release\Mallenom.ScanNetwork.Core.dll
+D:\Students\Dima Karasev\ScanService\ClassLibrary2\bin\Release\Mallenom.ScanNetwork.Core.pdb
+D:\Students\Dima Karasev\ScanService\ClassLibrary2\obj\Release\Mallenom.ScanNetwork.Core.dll
+D:\Students\Dima Karasev\ScanService\ClassLibrary2\obj\Release\Mallenom.ScanNetwork.Core.pdb

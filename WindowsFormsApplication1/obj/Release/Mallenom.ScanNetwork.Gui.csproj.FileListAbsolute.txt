@@ -1,0 +1,11 @@
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\bin\Release\Mallenom.ScanNetwork.Gui.exe.config
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\bin\Release\Mallenom.ScanNetwork.Gui.exe
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\bin\Release\Mallenom.ScanNetwork.Gui.pdb
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\bin\Release\Mallenom.ScanNetwork.Core.dll
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\bin\Release\Mallenom.ScanNetwork.Core.pdb
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Release\Mallenom.ScanNetwork.Gui.csprojResolveAssemblyReference.cache
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Release\Mallenom.ScanNetwork.Gui.MainForm.resources
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Release\Mallenom.ScanNetwork.Gui.Properties.Resources.resources
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Release\Mallenom.ScanNetwork.Gui.csproj.GenerateResource.Cache
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Release\Mallenom.ScanNetwork.Gui.exe
+D:\Students\Dima Karasev\ScanService\WindowsFormsApplication1\obj\Release\Mallenom.ScanNetwork.Gui.pdb
