@@ -11,7 +11,7 @@ namespace Mallenom.ScanNetwork.Core
 
 		/// <summary>Сканирует сеть на на личие сетвых устройств.</summary>
 		/// <returns>Список обнаруженный устройств.</returns>
-        Task<IReadOnlyList<IpAddressData>> ScanNetworkAsync();
+		Task<IReadOnlyList<CameraData>> ScanNetworkAsync();
         
 		
 		#endregion

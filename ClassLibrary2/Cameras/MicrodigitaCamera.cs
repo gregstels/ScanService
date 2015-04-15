@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Mallenom.ScanNetwork.Core.Cameras
 {
-	sealed class MicrodigitaCamera : CameraBase, ICamera
+	sealed class MicrodigitalCamera : CameraBase, ICamera
 	{
 		public bool IsCamera(string ipAddress, int port)
 		{
@@ -23,6 +23,11 @@ namespace Mallenom.ScanNetwork.Core.Cameras
 			}
 
 			return false;
+		}
+
+		public string CameraName
+		{
+			get { return "Microdigital"; }
 		}
 	}
 }

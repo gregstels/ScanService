@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
+using System.Linq;
+using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Threading.Tasks;
+using Mallenom.ScanNetwork.Core.Cameras;
+
 
 namespace Mallenom.ScanNetwork.Core
 {
@@ -12,6 +18,7 @@ namespace Mallenom.ScanNetwork.Core
 
 		private readonly ScanServiceConfigration _configration;
 		private readonly IpScanner _ipScanner;
+		private readonly IReadOnlyList<ICamera> _cameras;
 
 		#endregion
 
@@ -30,7 +37,11 @@ namespace Mallenom.ScanNetwork.Core
 		{
 			_configration = configration;
 			_ipScanner = new IpScanner();
-			
+
+			_cameras = new[]
+			{
+				new MicrodigitalCamera(),
+			};
 		}
 
 		public void Dispose()
@@ -39,14 +50,25 @@ namespace Mallenom.ScanNetwork.Core
 		}
 
 		#endregion
-	   
-		public async Task<IReadOnlyList<IpAddressData>> ScanNetworkAsync()
+
+		public async Task<IReadOnlyList<CameraData>> ScanNetworkAsync()
 		{
 			var serverList = _ipScanner.Skannig(_configration.Minimum, _configration.Maximum);
 
-			List<IpAddressData> list = null;
+			var hostName = Dns.GetHostName();
+			var hostEntry = Dns.GetHostEntry(hostName);
+			var localIpV4Address = hostEntry.AddressList.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
 
-			foreach (var ipAddress in serverList)
+			if(localIpV4Address == null)
+			{
+				throw new InvalidOperationException("Не найден IP адрес локальной машины по имени хоста локальной машины.");
+			}
+
+			var localIpAddress = localIpV4Address.ToString();
+
+			List<IpAddressData> avaibleIpAddressDataList = null;
+			List<CameraData> cameraDatas = null;
+			foreach(var ipAddress in serverList)
 			{
 				var macAddress = string.Empty;
 				using(var pProcess = new Process
@@ -69,34 +91,26 @@ namespace Mallenom.ScanNetwork.Core
 					{
 						macAddress = substrings[3].Substring(
 							Math.Max(0, substrings[3].Length - 2))
-									 + "-" + substrings[4]
-									 + "-" + substrings[5]
-									 + "-" + substrings[6]
-									 + "-" + substrings[7]
-									 + "-" + substrings[8].Substring(0, 2);
+						             + "-" + substrings[4]
+						             + "-" + substrings[5]
+						             + "-" + substrings[6]
+						             + "-" + substrings[7]
+						             + "-" + substrings[8].Substring(0, 2);
 					}
 
-					try
+					var currentIpAddress = ipAddress.ToString();
+
+					if(string.Compare(currentIpAddress, localIpAddress, CultureInfo.InvariantCulture, CompareOptions.None) == 0)
 					{
-						using(var tcpClient = new TcpClient
+						var allNetworkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
+						foreach(var networkInterface in allNetworkInterfaces)
 						{
-							SendTimeout = ConnectTimeout
-						})
-						{
-							if(list == null)
+							if(macAddress == String.Empty)
 							{
-								list = new List<IpAddressData>();
+								macAddress = networkInterface.GetPhysicalAddress().ToString();
 							}
-
-							await tcpClient.ConnectAsync(ipAddress, RtspPort)
-								.ConfigureAwait(continueOnCapturedContext: false);
-							list.Add(new IpAddressData(ipAddress.ToString(), RtspPort, macAddress));
-
 						}
-					}
-					catch(Exception exc)
-					{
-						if(exc is ArgumentNullException) throw;
+
 					}
 
 					try
@@ -106,14 +120,14 @@ namespace Mallenom.ScanNetwork.Core
 							SendTimeout = ConnectTimeout
 						})
 						{
-							if(list == null)
+							if(avaibleIpAddressDataList == null)
 							{
-								list = new List<IpAddressData>();
+								avaibleIpAddressDataList = new List<IpAddressData>();
 							}
 
 							await tcpClient.ConnectAsync(ipAddress, HttpPort)
 								.ConfigureAwait(continueOnCapturedContext: false);
-							list.Add(new IpAddressData(ipAddress.ToString(), HttpPort, macAddress));
+							avaibleIpAddressDataList.Add(new IpAddressData(ipAddress.ToString(), HttpPort, macAddress));
 						}
 
 					}
@@ -124,7 +138,25 @@ namespace Mallenom.ScanNetwork.Core
 				}
 			}
 
-			return list;
+			if(avaibleIpAddressDataList == null)
+			{
+				return null;
+			}
+
+			cameraDatas = new List<CameraData>();
+
+			foreach(var ipAddress in avaibleIpAddressDataList)
+			{
+				foreach(var camera in _cameras)
+				{
+					if(camera.IsCamera(ipAddress.Address, ipAddress.Port))
+					{
+						cameraDatas.Add(new CameraData(ipAddress.Address, ipAddress.Port, ipAddress.PhysicalAddress, camera.CameraName));
+					}
+				}
+			}
+
+			return cameraDatas;
 		}
 	}
 }

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CameraBase.cs" />
+    <Compile Include="CameraData.cs" />
     <Compile Include="Cameras\MicrodigitaCamera.cs" />
     <Compile Include="ICamera.cs" />
     <Compile Include="IpScanner.cs" />

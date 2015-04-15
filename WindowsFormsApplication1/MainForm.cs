@@ -1,7 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Net;
+using System.Text;
 using System.Windows.Forms;
 using Mallenom.ScanNetwork.Core;
 
@@ -9,8 +11,7 @@ namespace Mallenom.ScanNetwork.Gui
 {
 	public sealed partial class MainForm : Form
 	{
-		private readonly BindingList<IpAddressData> _bindingList;
-		private readonly Progress<IpAddressData> _progress;
+		private readonly BindingList<CameraData> _bindingList;
 		private readonly ScanServiceConfigration _scanServiceConfigration;
 		public MainForm()
 		{
@@ -20,19 +21,15 @@ namespace Mallenom.ScanNetwork.Gui
 			BackColor = SystemColors.Window;
 
 			_scanServiceConfigration = new ScanServiceConfigration();
-			_bindingList = new BindingList<IpAddressData>();
-			_progress = new Progress<IpAddressData>();
-			_progress.ProgressChanged += AddressAdded;
+			_bindingList = new BindingList<CameraData>();
+
 
 			_txtMimimum.Text = _scanServiceConfigration.Minimum.ToString();
 			_txtMaximum.Text = _scanServiceConfigration.Maximum.ToString();
 
-			dataGridView1.DataSource = _bindingList;
-		}
-
-		private void AddressAdded(object sender, IpAddressData e)
-		{
-			_bindingList.Add(e);
+			_dataGridCameras.AutoGenerateColumns = false;
+			_dataGridCameras.DataSource = _bindingList;
+			_dataGridCameras.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 		}
 
 		protected override void OnLoad(EventArgs e)
@@ -40,13 +37,6 @@ namespace Mallenom.ScanNetwork.Gui
 			base.OnLoad(e);
 
 			MinimumSize = Size;
-		}
-
-		protected override void OnClosed(EventArgs e)
-		{
-			_progress.ProgressChanged -= AddressAdded;
-
-			base.OnClosed(e);
 		}
 
 		private async void button1_Click(object sender, EventArgs e)
@@ -82,17 +72,50 @@ namespace Mallenom.ScanNetwork.Gui
 
 			_scanServiceConfigration.Minimum = minimum;
 			_scanServiceConfigration.Maximum = maximum;
-
+		   
 			using(var scanner = new ScanService(_scanServiceConfigration))
 			{
 				var list = await scanner.ScanNetworkAsync();
 
-				if(list == null) return;
+				if(list == null || list.Count == 0)
+				{
+					MessageBox.Show(
+							this,
+							@"Видеокамеры не найдены.",
+							@"Scan Service",
+							MessageBoxButtons.OK,
+							MessageBoxIcon.Information);
+					return;
+				}
 
 				foreach(var ipAddressData in list)
 				{
+					if(ipAddressData == null)
+					{
+						return;
+					}
+					 
 					_bindingList.Add(ipAddressData);
 				}
+			}
+		}
+
+		private void _btnOpen_Click(object sender, EventArgs e)
+		{
+			if(_dataGridCameras.SelectedRows.Count > 0)
+			{
+				var ipAddress = _dataGridCameras.SelectedRows[0].DataBoundItem as CameraData;
+
+				if(ipAddress == null)
+				{
+					return;
+				}
+
+				var builder = new StringBuilder();
+				builder.AppendFormat("http://{0}/", ipAddress.Address);
+				var uri = new Uri(builder.ToString());
+
+				Process.Start(uri.ToString());
 			}
 		}
 	}

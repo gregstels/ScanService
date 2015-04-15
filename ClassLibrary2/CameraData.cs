@@ -1,12 +1,13 @@
 ﻿namespace Mallenom.ScanNetwork.Core
 {
-	public class IpAddressData
+	public sealed class CameraData
 	{
 		#region Data
 
 		private readonly string _address;
 		private readonly int _port;
 		private readonly string _physicalAddress;
+		private readonly string _cameraName;
 
 		#endregion
 
@@ -16,12 +17,13 @@
 		/// <param name="address">Адрес.</param>
 		/// <param name="port">Порт.</param>
 		/// <param name="physicalAddress">MAC address.</param>
-		public IpAddressData(string address, int port, string physicalAddress)
+		/// <param name="cameraName">Имя камеры.</param>
+		public CameraData(string address, int port, string physicalAddress, string cameraName)
 		{
 			_address = address;
 			_port = port;
 			_physicalAddress = physicalAddress;
-
+			_cameraName = cameraName;
 		}
 
 		#endregion
@@ -45,6 +47,11 @@
 		public string PhysicalAddress
 		{
 			get { return _physicalAddress;}
+		}
+
+		public string CameraName
+		{
+			get { return _cameraName; }
 		}
 
 		#endregion
